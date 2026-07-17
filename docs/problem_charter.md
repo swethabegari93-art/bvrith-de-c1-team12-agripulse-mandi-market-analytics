@@ -1,14 +1,14 @@
 # Problem Charter
 
 **Week:** 1  
-**Owner(s):** [Student names]  
-**Project:** [Project title]
+**Owner(s):Begari Swetha, Hari Gopika Sri Varshita,G Madhusri 
+**Project:AgriPulse - Mandi Market Analytics
 
 ---
 
 ## 1. Problem Context
 
-Explain the domain in simple language.
+Agriculture / markets — real Government of India open data with a fictional stakeholder story
 
 Prompts:
 
