@@ -14,14 +14,7 @@
 
 ## 1. Project Summary
 
-Write 5–8 lines explaining the assigned project.
-
-Example structure:
-
-- **Domain:** [Urban Mobility / IPL Matchday / Weather / etc.]
-- **Core engineering problem:** [What raw data needs to become trusted insight?]
-- **Main pipeline:** Raw Sources → Bronze → Silver → Data Quality → Gold → Power BI → Streaming Simulation
-- **Final outcome:** GitHub repo, Databricks notebooks, Gold outputs, Power BI dashboard, streaming simulation, final demo.
+AgriPulse – Mandi Market Analytics is a data engineering project that uses official Government of India Agmarknet mandi data to analyze agricultural commodity prices and arrivals. The project builds a Lakehouse pipeline with Bronze, Silver, Gold, and Data Quality layers to transform raw data into trusted, analytics-ready datasets. The processed data is visualized in a Power BI dashboard, providing insights into commodity price trends, district-wise arrivals, market volatility, and simulated live price updates to support better decision-making for farmers and market authorities.
 
 ---
 
