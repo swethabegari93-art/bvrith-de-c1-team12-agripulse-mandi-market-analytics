@@ -1,7 +1,9 @@
 # Problem Charter
 
 **Week:** 1  
+
 **Owner(s):Begari Swetha, Hari Gopika Sri Varshita,G Madhusri 
+
 **Project:AgriPulse - Mandi Market Analytics
 
 ---
@@ -10,12 +12,9 @@
 
 Agriculture / markets — real Government of India open data with a fictional stakeholder story
 
-Prompts:
+Define the Problem
 
-- What real-world process or operation does this project represent?
-- What kinds of data are generated?
-- Why is raw data not enough?
-- Who would use the final dashboard or metrics?
+AgriPulse solves the problem of inconsistent and unorganized mandi market data by cleaning and processing official Agmarknet data into reliable insights. It helps farmers and market authorities make better decisions using accurate price and arrival analytics.
 
 ---
 
