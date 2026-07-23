@@ -7,37 +7,45 @@
 
 ## 1. Source File Catalog
 
-| File Name | Grain | Purpose | Approx. Rows | Notes |
-|---|---|---|---:|---|
-| `[source_file_1].csv` | One row per [entity/event] | [Purpose] | [rows] | [notes] |
-| `[source_file_2].csv` | One row per [entity/event] | [Purpose] | [rows] | [notes] |
-| `[reference_file].csv` | One row per [reference item] | [Purpose] | [rows] | [notes] |
-| `[streaming_events].json` | One row per event | Streaming simulation | [rows] | JSON event files |
+| File Name            | Grain                      | Purpose                   | Approx. Rows | Notes                 |
+| -------------------- | -------------------------- | ------------------------- | ------------ | --------------------- |
+| `commodities.csv`    | One row per commodity      | Stores commodity details  | 50           | Master commodity list |
+| `markets.csv`        | One row per market         | Stores market information | 100          | Market master         |
+| `arrivals.csv`       | One row per arrival record | Daily commodity arrivals  | 5000         | Transactional data    |
+| `prices.csv`         | One row per price record   | Daily mandi prices        | 5000         | Transactional data    |
+| `market_events.json` | One row per event          | Streaming simulation      | 1000         | JSON event data       |
+
 
 ---
 
-## 2. Raw File Schema: `[source_file_1].csv`
+## 2. Raw File Schema: `commodities.csv`
 
-| Field Name | Data Type | Required? | Example | Description |
-|---|---|---|---|---|
-| `source_id` | string | Yes | `SRC-0001` | Unique source record ID |
-| `[field_name]` | string | Yes/No | `[example]` | [description] |
+| Field Name     | Data Type | Required? | Example | Description         |
+| -------------- | --------- | --------- | ------- | ------------------- |
+| commodity_id   | Integer   | Yes       | 101     | Unique commodity ID |
+| commodity_name | String    | Yes       | Rice    | Commodity name      |
+| category       | String    | Yes       | Cereals | Commodity category  |
 
 ---
 
-## 3. Raw File Schema: `[source_file_2].csv`
+## 3. Raw File Schema: `market.csv`
 
-| Field Name | Data Type | Required? | Example | Description |
-|---|---|---|---|---|
-| `source_id` | string | Yes | `SRC2-0001` | Unique source record ID |
+| Field Name  | Data Type | Required? | Example           | Description      |
+| ----------- | --------- | --------- | ----------------- | ---------------- |
+| market_id   | Integer   | Yes       | 201               | Unique market ID |
+| market_name | String    | Yes       | Bowenpally Market | Market name      |
+| district    | String    | Yes       | Hyderabad         | District         |
+| state       | String    | Yes       | Telangana         | State            |
+
 
 ---
 
 ## 4. Reference File Schema
 
-| Field Name | Data Type | Required? | Example | Description |
-|---|---|---|---|---|
-| `reference_id` | string | Yes | `REF-001` | Reference key |
+| Field Name    | Data Type | Required? | Example | Description        |
+| ------------- | --------- | --------- | ------- | ------------------ |
+| category_id   | Integer   | Yes       | 1       | Category ID        |
+| category_name | String    | Yes       | Cereals | Commodity category |
 
 ---
 
@@ -46,21 +54,28 @@
 Final Silver table name:
 
 ```text
-silver_[project_specific_table_name]
+silver_market_prices
 ```
 
-| Silver Field | Data Type | Source Mapping | Business Meaning |
-|---|---|---|---|
-| `record_id` | string | `[source field]` | Canonical record ID |
-| `event_date` | date | `[source field]` | Date used for analytics |
-| `[silver_field]` | [type] | [mapping] | [meaning] |
+| Silver Field | Data Type | Source Mapping | Business Meaning      |
+| ------------ | --------- | -------------- | --------------------- |
+| record_id    | Integer   | price_id       | Unique price record   |
+| commodity_id | Integer   | commodity_id   | Commodity identifier  |
+| market_id    | Integer   | market_id      | Market identifier     |
+| price_date   | Date      | price_date     | Date of observation   |
+| modal_price  | Float     | modal_price    | Standard market price |
+| quantity     | Float     | quantity       | Arrival quantity      |
+
 
 ---
 
 ## 6. Streaming Event Schema
 
-| Field Name | Data Type | Required? | Example | Description |
-|---|---|---|---|---|
-| `event_id` | string | Yes | `EVT-0001` | Unique event ID |
-| `event_timestamp` | timestamp | Yes | `2026-07-03T10:15:00+05:30` | Event time |
-| `event_type` | string | Yes | `[event type]` | Event category |
+| Field Name      | Data Type | Required? | Example                   | Description          |
+| --------------- | --------- | --------- | ------------------------- | -------------------- |
+| event_id        | String    | Yes       | EVT-0001                  | Unique event ID      |
+| event_timestamp | Timestamp | Yes       | 2026-07-03T10:15:00+05:30 | Event timestamp      |
+| event_type      | String    | Yes       | PRICE_UPDATE              | Type of event        |
+| commodity_id    | Integer   | Yes       | 101                       | Commodity ID         |
+| market_id       | Integer   | Yes       | 201                       | Market ID            |
+| modal_price     | Float     | Yes       | 2650.50                   | Updated market price |
