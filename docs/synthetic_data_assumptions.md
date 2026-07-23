@@ -3,6 +3,7 @@
 **Week:** 2  
 **Purpose:** Document how educational data is created.
 
+
 ---
 
 ## 1. Synthetic Data Boundary
@@ -14,24 +15,24 @@ This project uses synthetic educational data only. It must not be presented as r
 ## 2. Domain Assumptions
 
 | Area | Assumption |
-|---|---|
-| Geography / scope | [Example: Hyderabad and nearby regions] |
-| Time period | [Example: July to September 2026] |
-| Source systems | [Example: Two different operational feeds] |
-| Event types | [Example: booking, scan, alert, transaction] |
-| Reference data | [Example: zones, categories, products, venues] |
+|------|------------|
+| Geography / scope | Agricultural markets (mandis) across Telangana and nearby regions |
+| Time period | July 2026 to September 2026 |
+| Source systems | Commodity, Market, Arrivals, and Prices datasets |
+| Event types | Commodity arrival, Price update, Market transaction |
+| Reference data | Commodities, Markets, Districts, States |
 
 ---
 
 ## 3. Data Volume Assumptions
 
 | File | Approximate Rows | Reason |
-|---|---:|---|
-| `[source_file_1].csv` | [rows] | [reason] |
-| `[source_file_2].csv` | [rows] | [reason] |
-| `[reference_file].csv` | [rows] | [reason] |
-| `[streaming_events].json` | [rows] | [reason] |
-
+|------|------------------:|--------|
+| `commodities.csv` | 50 | Contains the master list of agricultural commodities |
+| `markets.csv` | 100 | Contains market (mandi) information across regions |
+| `arrivals.csv` | 5,000 | Simulates daily commodity arrivals for analysis |
+| `prices.csv` | 5,000 | Simulates daily commodity price records |
+| `market_events.json` | 1,000 | Simulates streaming market and price update events |
 ---
 
 ## 4. Controlled Data Quality Issues
