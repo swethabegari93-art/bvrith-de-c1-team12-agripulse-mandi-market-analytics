@@ -1,4 +1,4 @@
-# Week 02 Log — [Sprint Name]
+# Week 02 Log — Data Understanding and Documentation
 
 **Week:** 2  
 **Date range:** 17 July 2026 – 24 July 2026   
