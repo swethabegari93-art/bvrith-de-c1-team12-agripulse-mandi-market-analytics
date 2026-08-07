@@ -1,4 +1,4 @@
-# Week 04 Log — [Bronze Data Ingestion]
+# Week 04 Log — Bronze Data Ingestion
 
 **Week:** 4  
 **Date range:** [31-07-2026]  
