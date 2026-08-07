@@ -1,7 +1,7 @@
 # Week 03 Log —  Databricks Setup & Data Exploration
 
 **Week:** 3  
-**Date range:** 24 July 2026 – 20 July 2026
+**Date range:** 24 July 2026 – 20 July 2026        
 **Team:**Team 12  
 **Project:** AgriPulse – Mandi Market Analytics
 
