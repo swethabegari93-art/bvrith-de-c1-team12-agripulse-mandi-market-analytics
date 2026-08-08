@@ -55,12 +55,9 @@ The Bronze tables were cleaned, standardized, validated, and transformed into Si
 ## 5. Evidence Added to GitHub
 
 -Week 5 Silver-layer Databricks notebook/code.
--Screenshot of Silver arrivals transformation and output.
--Screenshot of Silver commodities transformation and output.
--Screenshot of Silver markets transformation and output.
--Screenshot of Silver prices transformation and output.
--Screenshot of Silver table schemas using printSchema().
--Screenshots showing validation of the Silver tables.
+-Screenshots of Silver transformations and outputs for Arrivals, Commodities, Markets, and Prices.
+-Screenshots of Silver table schemas using printSchema().
+-Screenshots showing successful validation of the Silver tables.
 ---
 
 ## 6. AI Transparency Note
