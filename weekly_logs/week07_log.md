@@ -35,13 +35,12 @@ Create and validate the required 8 KPI outputs for trusted observations, modal p
 
 ## 3. Key Decisions
 
-**-Gold aggregations were created using Trusted Silver data only; Candidate and Quarantine data were not used.
+-Gold aggregations were created using Trusted Silver data only; Candidate and Quarantine data were not used.
 -The approved full observation grain was maintained as market_id + commodity_id + variety_id + report_date.
 -Price and arrival calculations were based on the approved unit and conversion information, including the arrival-to-tonne conversion factor.
 -Price change percentage uses the previous trusted modal price with a null/zero guard to avoid invalid division.
 -Volatility is calculated using standard deviation of modal price at the defined monthly market/commodity/variety grain.
--The Fresh Trusted Event Rate KPI was kept as NOT_CONFIGURED because an approved trusted event source and freshness threshold were noy  available for this Week 7 implementation.**
----
+-The Fresh Trusted Event Rate KPI was kept as NOT_CONFIGURED because an approved trusted event source and freshness threshold were noy  available for this Week 7 implementation.
 
 ## 4. Blockers / Risks
 
