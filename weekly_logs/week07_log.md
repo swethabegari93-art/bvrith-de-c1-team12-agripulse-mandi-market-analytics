@@ -55,12 +55,12 @@ Create and validate the required 8 KPI outputs for trusted observations, modal p
 
 ## 5. Evidence Added to GitHub
 
--docs/gold_metrics_definition.md
--weekly_logs/week07_log.md
--screenshots/Week07_gold_tables.png
--screenshots/Week07_gold_validation.png
--screenshots/Week07_gold_all_kpi_output.png
--screenshots/Week07_Gold_KPI_Metrics_Output.png
+-docs/gold_metrics_definition.md     
+-weekly_logs/week07_log.md      
+-screenshots/Week07_gold_tables.png      
+-screenshots/Week07_gold_validation.png      
+-screenshots/Week07_gold_all_kpi_output.png       
+-screenshots/Week07_Gold_KPI_Metrics_Output.png      
 
 ---
 
