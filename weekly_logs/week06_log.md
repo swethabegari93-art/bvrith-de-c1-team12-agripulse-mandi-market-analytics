@@ -1,7 +1,8 @@
 # Week 06 Log — [Sprint Name]
 
 **Week:** 6  
-**Date range:**   31-08-2026 to 6-09-2026
+**Date range:**   31-08-2026 to 6-09-2026         
+
 **Team:** Team 12  
 **Project:** AgriPulse Market Mandi Analysis
 
