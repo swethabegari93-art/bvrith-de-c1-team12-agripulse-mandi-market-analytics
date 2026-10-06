@@ -9,30 +9,41 @@
 
 
 
-| Rule ID | Rule Name | Severity | Passed Count | Failed Count | Business Impact |
-|---|---|---|---:|---:|---|
-| DQ-OBS-001 | Identity / Duplicate / Grain Safety | High | `[actual count]` | `[actual count]` | Duplicate or missing IDs can cause duplicate counting and unreliable records. |
-| DQ-REF-001 | Reference Integrity | Medium | `[actual count]` | `[actual count]` | Invalid market, commodity or variety references can affect joins and reporting. |
-| DQ-DAT-001 | Date Scope | Medium | `[actual count]` | `[actual count]` | Invalid dates can place records in the wrong reporting period. |
-| DQ-PRC-001 | Price Validity | High | `[actual count]` | `[actual count]` | Invalid prices can distort price analytics. |
-| DQ-ARR-001 | Arrival Validity | High | `[actual count]` | `[actual count]` | Invalid arrival quantities can distort supply and availability analytics. |
-| DQ-UNT-001 | Unit Consistency | Medium | `[actual count]` | `[actual count]` | Inconsistent units can make numeric comparisons and conversions unreliable. |
+The Week 6 Data Quality process evaluated Silver Candidate records using checks covering identity and duplicate safety, reference integrity, date scope, price validity, arrival validity, and unit consistency.
 
+The verified Candidate, Trusted, and Quarantine reconciliation results are:
+
+| Dataset | Candidate Count | Trusted Count | Quarantine / Failed Count | Reconciliation |
+|---|---:|---:|---:|---|
+| Arrivals | 88,220 | 87,137 | 1,083 | PASS |
+| Commodities | 164 | 156 | 8 | PASS |
+| Markets | 606 | 594 | 12 | PASS |
+| Prices | 96,125 | 94,908 | 1,217 | PASS |
+| **Total** | **185,115** | **182,795** | **2,320** | **PASS** |
+
+### Reconciliation
+
+The Candidate records reconcile correctly:
+
+
+Candidate = Trusted + Quarantine
+
+185,115 = 182,795 + 2,320
 
 ---
 
 ## 2. Failed Record Examples
 
+## 2. Failed Record Examples
+
 | Rule ID | Sample Record ID | Failure Reason | Action / Handling |
 |---|---|---|---|
-| DQ-OBS-001 | `[actual ID]` | Duplicate or missing physical/business key | Routed to Quarantine |
-| DQ-REF-001 | `[actual ID]` | Required market/commodity/variety reference missing or invalid | Routed to Quarantine |
-| DQ-DAT-001 | `[actual ID]` | Report date outside approved date scope | Routed to Quarantine |
-| DQ-PRC-001 | `[actual ID]` | Invalid price value or price ordering | Routed to Quarantine |
-| DQ-ARR-001 | `[actual ID]` | Missing or negative arrival quantity | Routed to Quarantine |
-| DQ-UNT-001 | `[actual ID]` | Missing or invalid unit | Routed to Quarantine |
-
-
+| DQ-OBS-001 | `[from Week 6 DQ output]` | Duplicate or missing physical/business key | Routed to Quarantine |
+| DQ-REF-001 | `[from Week 6 DQ output]` | Required market/commodity/variety reference missing or invalid | Routed to Quarantine |
+| DQ-DAT-001 | `[from Week 6 DQ output]` | Report date outside approved date scope | Routed to Quarantine |
+| DQ-PRC-001 | `[from Week 6 DQ output]` | Invalid price value or price ordering | Routed to Quarantine |
+| DQ-ARR-001 | `[from Week 6 DQ output]` | Missing or negative arrival quantity | Routed to Quarantine |
+| DQ-UNT-001 | `[from Week 6 DQ output]` | Missing or invalid unit | Routed to Quarantine |
 ---
 
 ## 3. What Should Block Gold Metrics?
@@ -69,3 +80,6 @@ Price validity (DQ-PRC-001), arrival validity (DQ-ARR-001), duplicate/grain issu
 Bad records were flagged and routed to Quarantine, while records passing the applicable checks were routed to Trusted Silver.
 -What should the mentor review carefully?
 The mentor should review the actual DQ failure counts, sample quarantined records and failure reasons, approved configuration values such as bounds/unit lists, and the reconciliation between Candidate, Trusted, and Quarantine records. The notebook specifically says these results must be independently verified.
+-What should the mentor review carefully?
+The mentor should carefully review the actual DQ failed counts, sample quarantined records, failure reasons, configured validation thresholds and reference mappings.
+The mentor should also verify that Candidate records reconcile correctly into Trusted and Quarantine records, that Quarantine records are excluded from Gold metrics, and that Gold tables are built only from validated Trusted Silver records.
