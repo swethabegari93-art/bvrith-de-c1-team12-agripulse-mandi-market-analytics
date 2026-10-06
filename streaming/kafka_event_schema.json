@@ -1,5 +1,5 @@
 {
-  "topic_name": "project.events",
+  "topic_name": "agripulse.market.events",
   "implementation_status": "design_only_not_mandatory",
   "description": "Kafka-style event design for production architecture awareness. Kafka implementation is not required for this internship.",
   "key": {
@@ -10,18 +10,16 @@
     "event_id": "string",
     "event_timestamp": "timestamp",
     "event_type": "string",
-    "entity_id": "string",
-    "severity": "string",
-    "payload": "object"
+    "commodity_id": "integer",
+    "market_id": "integer",
+    "modal_price": "number"
   },
   "sample_event": {
-    "event_id": "EVT-001",
-    "event_timestamp": "2026-07-03T18:00:00+05:30",
-    "event_type": "alert",
-    "entity_id": "ENT-0001",
-    "severity": "medium",
-    "payload": {
-      "message": "Sample event"
-    }
+    "event_id": "EVT-0001",
+    "event_timestamp": "2026-07-03T10:15:00+05:30",
+    "event_type": "PRICE_UPDATE",
+    "commodity_id": 101,
+    "market_id": 201,
+    "modal_price": 2650.50
   }
 }
