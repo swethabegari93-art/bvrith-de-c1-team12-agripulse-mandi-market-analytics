@@ -1,34 +1,37 @@
 # Data Quality Summary
 
 **Week:** 6  
-**Purpose:** Summarize data quality rules, failures and business impact.
+**Purpose:**Summarize the data quality rules, failures, handling approach, and business impact.
 
 ---
 
 ## 1. Quality Rule Results
 
-| Rule ID    | Rule Name                           | Severity |     Passed Count |     Failed Count | Business Impact                                                                |
-| ---------- | ----------------------------------- | -------- | ---------------: | ---------------: | ------------------------------------------------------------------------------ |
-| DQ-OBS-001 | Identity / Duplicate / Grain Safety | High     | `[actual count]` | `[actual count]` | Duplicate or missing IDs can cause duplicate counting and unreliable records   |
-| DQ-REF-001 | Reference Integrity                 | Medium   | `[actual count]` | `[actual count]` | Invalid market, commodity or variety references can affect joins and reporting |
-| DQ-DAT-001 | Date Scope                          | Medium   | `[actual count]` | `[actual count]` | Invalid dates can place records in the wrong reporting period                  |
-| DQ-PRC-001 | Price Validity                      | High     | `[actual count]` | `[actual count]` | Invalid prices can distort price analytics                                     |
-| DQ-ARR-001 | Arrival Validity                    | High     | `[actual count]` | `[actual count]` | Invalid arrival quantities can distort supply and availability analytics       |
-| DQ-UNT-001 | Unit Consistency                    | Medium   | `[actual count]` | `[actual count]` | Inconsistent units can make numeric comparisons and conversions unreliable     |
+
+
+| Rule ID | Rule Name | Severity | Passed Count | Failed Count | Business Impact |
+|---|---|---|---:|---:|---|
+| DQ-OBS-001 | Identity / Duplicate / Grain Safety | High | `[actual count]` | `[actual count]` | Duplicate or missing IDs can cause duplicate counting and unreliable records. |
+| DQ-REF-001 | Reference Integrity | Medium | `[actual count]` | `[actual count]` | Invalid market, commodity or variety references can affect joins and reporting. |
+| DQ-DAT-001 | Date Scope | Medium | `[actual count]` | `[actual count]` | Invalid dates can place records in the wrong reporting period. |
+| DQ-PRC-001 | Price Validity | High | `[actual count]` | `[actual count]` | Invalid prices can distort price analytics. |
+| DQ-ARR-001 | Arrival Validity | High | `[actual count]` | `[actual count]` | Invalid arrival quantities can distort supply and availability analytics. |
+| DQ-UNT-001 | Unit Consistency | Medium | `[actual count]` | `[actual count]` | Inconsistent units can make numeric comparisons and conversions unreliable. |
 
 
 ---
 
 ## 2. Failed Record Examples
 
-| Rule ID    | Sample Record ID | Failure Reason                                                 | Action / Handling    |
-| ---------- | ---------------- | -------------------------------------------------------------- | -------------------- |
-| DQ-OBS-001 | `[actual ID]`    | Duplicate or missing physical/business key                     | Routed to Quarantine |
-| DQ-REF-001 | `[actual ID]`    | Required market/commodity/variety reference missing or invalid | Routed to Quarantine |
-| DQ-DAT-001 | `[actual ID]`    | Report date outside approved date scope                        | Routed to Quarantine |
-| DQ-PRC-001 | `[actual ID]`    | Invalid price value or price ordering                          | Routed to Quarantine |
-| DQ-ARR-001 | `[actual ID]`    | Missing or negative arrival quantity                           | Routed to Quarantine |
-| DQ-UNT-001 | `[actual ID]`    | Missing or invalid unit                                        | Routed to Quarantine |
+| Rule ID | Sample Record ID | Failure Reason | Action / Handling |
+|---|---|---|---|
+| DQ-OBS-001 | `[actual ID]` | Duplicate or missing physical/business key | Routed to Quarantine |
+| DQ-REF-001 | `[actual ID]` | Required market/commodity/variety reference missing or invalid | Routed to Quarantine |
+| DQ-DAT-001 | `[actual ID]` | Report date outside approved date scope | Routed to Quarantine |
+| DQ-PRC-001 | `[actual ID]` | Invalid price value or price ordering | Routed to Quarantine |
+| DQ-ARR-001 | `[actual ID]` | Missing or negative arrival quantity | Routed to Quarantine |
+| DQ-UNT-001 | `[actual ID]` | Missing or invalid unit | Routed to Quarantine |
+
 
 ---
 
